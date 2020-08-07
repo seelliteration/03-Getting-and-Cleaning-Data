@@ -1,0 +1,7 @@
+XML doesn't work with https, use this method instead
+
+library("RCurl")
+library("XML")
+fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+data.unparsed <- getURL(fileURL)
+data <- xmlTreeParse(data.unparsed, useInternalNodes = TRUE)
